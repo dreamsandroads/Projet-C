@@ -5,4 +5,4 @@ Le dossier result contient les fichiers textes des résultats obtenus selon les 
 correspond au prix de l'actif sous-jacent, la deuxième à la maturité, et la dernière au prix de l'option.
 
 Le dossier plot contient le code python permettant de représenter graphiquement le prix d'une option
-en fonction du temps et du prict de l'actif sous-jacent.
+en fonction du temps et du prix de l'actif sous-jacent.
