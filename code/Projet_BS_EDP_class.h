@@ -134,10 +134,10 @@ class Pricing{
             return ret;   // Variable contenant les 3 vecteurs : 1. Prix de l'actif sous-jacent, 2. Maturité du put, 3. Prix du put. 
         }
 
-    // Création de la fonction de class permettant de pricer un call par la méthode implicite_Cranston :
+    // Création de la fonction de class permettant de pricer un call par la méthode implicite_Crank_Nicolson :
     // Différence dans le code avec la méthode implicite : les coefficients a, b et c.  
 
-        IntPair compute_implicite_Cranston_call(double K, double T, double r, double sigma, double Smax, int Nt, int Ms){
+        IntPair compute_implicite_Crank_Nicolson_call(double K, double T, double r, double sigma, double Smax, int Nt, int Ms){
             
             double dt = T/(double)(Nt); // Définition du pas temporel. 
             double dx = Smax/(double)(Ms); // Définition du pas spacial. 
@@ -188,10 +188,10 @@ class Pricing{
         }
 
 
-    // Création de la fonction de class permettant de pricer un put par la méthode implicite_Cranston : 
+    // Création de la fonction de class permettant de pricer un put par la méthode implicite_Crank_Nicolson : 
     // Différence dans le code avec la méthode implicite : les coéfficients a, b et c. 
 
-         IntPair compute_implicite_Cranston_put(double K, double T, double r, double sigma, double Smax, int Nt, int Ms){
+         IntPair compute_implicite_Crank_Nicolson_put(double K, double T, double r, double sigma, double Smax, int Nt, int Ms){
             
             double dt = T/(double)(Nt); // Définition du pas temporel. 
             double dx = Smax/(double)(Ms); // Définition du pas spacial. 

@@ -4,7 +4,7 @@
 #include<vector>
 #include<algorithm> 
 #include<iterator> 
-#include "Projet_BS_EDP_class.h" // Fichier contenant la classe créée pour pricer un call/put : méthode implicite et méthode implicite_Cranston.
+#include "Projet_BS_EDP_class.h" // Fichier contenant la classe créée pour pricer un call/put : méthode implicite et méthode implicite_Crank_Nicolson.
 #include "Projet_BS_EDP_fonctions.h" // Fichier contenant les fonctions nécessaires pour calculer les sensibilités : delta, gamma, theta, vega et rho.
 
 using namespace std;
@@ -60,7 +60,7 @@ int main()
 
 
     ////////////////
-    // On peut faire la même chose pour la méthode implicite_Cranston : 
+    // On peut faire la même chose pour la méthode implicite_Crank_Nicolson : 
     ///////////////
 
     // Implémentation des sensibilités avec l'équation de Black-Sholes-Merton : on utilise les fonctions du fichier : Projet_BS_EDP_fonctions.h
