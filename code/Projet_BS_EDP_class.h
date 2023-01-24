@@ -163,8 +163,8 @@ class Pricing{
                 result[Ms-1] = xvalues[Ms-1]-K*exp(-r*dt*(T-prev_t));
 
                 for(int xi = 1; xi < Ms-1; xi++){   // On calcule le prix du call pour chaque prix de l'actif sous-jacent. 
-                    double coef_a = 0.5*xi*xi*dt*sigma*sigma+0.5*xi*dt;
-                    double coef_b = 0.5*xi*xi*dt*sigma*sigma-0.5*xi*dt;
+                    double coef_a = 0.5*xi*xi*dt*sigma*sigma+0.5*xi*r*dt;
+                    double coef_b = 0.5*xi*xi*dt*sigma*sigma-0.5*xi*r*dt;
                     double coef_c = 1-xi*xi*sigma*sigma*dt-r*dt;
                     result[xi] = coef_a*previous[xi+1]+coef_b*previous[xi-1]+coef_c*previous[xi];
                 }
@@ -217,8 +217,8 @@ class Pricing{
                 result[Ms-1] = K*exp(-r*dt*(T-prev_t)) - xvalues[Ms-1];
 
                 for(int xi = 1; xi < Ms-1; xi++){ // On calcule le prix du put pour chaque prix de l'actif sous-jacent. 
-                    double coef_a = 0.5*xi*xi*dt*sigma*sigma+0.5*xi*dt;
-                    double coef_b = 0.5*xi*xi*dt*sigma*sigma-0.5*xi*dt;
+                    double coef_a = 0.5*xi*xi*dt*sigma*sigma+0.5*xi*r*dt;
+                    double coef_b = 0.5*xi*xi*dt*sigma*sigma-0.5*xi*r*dt;
                     double coef_c = 1-xi*xi*sigma*sigma*dt-r*dt;
                     result[xi] = coef_a*previous[xi+1]+coef_b*previous[xi-1]+coef_c*previous[xi];
                 }

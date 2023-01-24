@@ -35,7 +35,7 @@ int main()
     // On récupère l'évolution des prix de l'actif sous-jacent, de la maturité et du prix du call.
     // On stocke ces trois vecteurs dans la variable resultat_call_imp :  
 
-    auto retc = obj.compute_implicite_call(0.5, 1.0, 0.05, 0.2, 1, 20, 20); // On utilise notre fonction de la class Pricing. 
+    auto retc = obj.compute_implicite_Crank_Nicolson_call(0.5, 1.0, 0.05, 0.2, 1, 20, 20); // On utilise notre fonction de la class Pricing. 
     vector<vector<double>> resultat_call_imp{{retc.first, retc.second, retc.third}};
 
     // Affichage des résultats : (une ligne : prix de l'actif au moment de l'évaluation du prix de l'option, maturité de l'option, prix de l'option)
@@ -43,20 +43,20 @@ int main()
     cout << "Prix de l'actif sous-jacent | Maturité | Prix du call :" << endl;
     for (int i = 0; i < resultat_call_imp[1].size(); i++) {
 
-            cout << resultat_call_imp[0][i] << " | " << resultat_call_imp[1][i] << " | " << resultat_call_imp[2][i] << endl;}
+            cout << resultat_call_imp[0][i] << " " << resultat_call_imp[1][i] << " " << resultat_call_imp[2][i] << endl;}
 
 
 
     // Pricing d'un put par la méthode implicite :  (On suit le même schéma que précédemment)
 
-    auto retp = obj.compute_implicite_put(0.5, 1.0, 0.05, 0.2, 1, 20, 20); 
+    auto retp = obj.compute_implicite_Crank_Nicolson_put(0.5, 1.0, 0.05, 0.2, 1, 20, 20); 
     vector<vector<double>> resultat_put_imp{{retp.first, retp.second, retp.third}};
 
     cout << "" << endl;
     cout << "Prix de l'actif sous-jacent | Maturité | Prix du put :" << endl;
     for (int i = 0; i < resultat_put_imp[1].size(); i++) {
 
-            cout << resultat_put_imp[0][i] << " | " << resultat_put_imp[1][i] << " | " << resultat_put_imp[2][i] << endl;}
+            cout << resultat_put_imp[0][i] << " " << resultat_put_imp[1][i] << " " << resultat_put_imp[2][i] << endl;}
 
 
     ////////////////
